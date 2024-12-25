@@ -8,40 +8,35 @@
         /* Embedded CSS */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #E0E0E0; /* Light text */
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(270deg, #000000, #434343);
-            background-size: 400% 400%;
-            animation: AnimationName 30s ease infinite;
-        }
-
-        @keyframes AnimationName { 
-            0%{background-position:0% 50%}
-            50%{background-position:100% 50%}
-            100%{background-position:0% 50%}
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            height: 100vh;
+            background-image: url('https://example.com/stars-background.jpg'); /* Replace with your stars background image */
+            background-size: cover;
+            background-position: center;
+            transition: background-position 0.5s ease;
         }
 
         .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 80%;
-            margin: auto;
             padding: 20px;
             border: 1px solid #333;
             border-radius: 8px;
-            background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent dark background for the container */
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .container:hover {
-            transform: scale(1.05);
+            background-color: rgba(30, 30, 30, 0.8);
+            text-align: center;
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #6200EA; /* A deep purple for the button */
+            background-color: #6200EA;
             color: white;
             border: none;
             border-radius: 5px;
@@ -50,7 +45,7 @@
         }
 
         button:hover {
-            background-color: #3700B3; /* A darker shade of purple for hover */
+            background-color: #3700B3;
         }
     </style>
 </head>
@@ -89,6 +84,16 @@
             const randomIndex = Math.floor(Math.random() * facts.length);
             document.getElementById('factDisplay').innerText = facts[randomIndex];
         }
+
+        document.addEventListener('mousemove', function(e) {
+            const width = window.innerWidth / 2;
+            const height = window.innerHeight / 2;
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            const depthX = ((mouseX - width) / width) * 50; // Adjust parallax depth here
+            const depthY = ((mouseY - height) / height) * 50; // Adjust parallax depth here
+            document.body.style.backgroundPosition = `${depthX}px ${depthY}px`;
+        });
     </script>
 </body>
 </html>
