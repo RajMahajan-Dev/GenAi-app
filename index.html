@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 Universe Facts Generator 🌠</title>
+    <style>
+        /* Embedded CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #E0E0E0; /* Light text */
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://example.com/space-background.jpg'); /* Example background image */
+            background-size: cover;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent dark background for the container */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #6200EA; /* A deep purple for the button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #3700B3; /* A darker shade of purple for hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 Universe Fun Facts 🌠</h1>
+        <p id="factDisplay">👉 Click the button to learn a new fact about the universe! 🌟</p>
+        <button onclick="generateFact()">Generate Fact 🚀</button>
+    </div>
+    <script>
+        // Embedded JavaScript
+        const facts = [
+            "The universe has no center and is constantly expanding. 🌌",
+            "Venus rotates in the opposite direction to most planets in our solar system. 🪐",
+            "A day on Venus is longer than a year on Venus. 🕰️",
+            "Mars has the tallest volcano in the solar system, named Olympus Mons. 🌋",
+            "Jupiter's Great Red Spot is a storm larger than Earth. 🌀",
+            "Saturn's rings are made up of billions of pieces of ice, dust, and rocks. 💍",
+            "Uranus rotates on its side, making it unique among the planets. 🧊",
+            "Neptune has the strongest winds in the solar system, reaching speeds of 1,600 km/h. 🌬️",
+            "The Milky Way galaxy is on a collision course with the Andromeda galaxy. 🌠",
+            "The sun accounts for 99.86% of the mass in our solar system. ☀️",
+            "There are more trees on Earth than stars in the Milky Way. 🌳",
+            "A neutron star is so dense that one teaspoon of its material would weigh about 6 billion tons. ⚖️",
+            "The universe might be one of many, potentially infinite, universes in a multiverse. 🔮",
+            "The first exoplanet was discovered in 1992. 🪐",
+            "The largest known asteroid is Ceres, which is also classified as a dwarf planet. 🪨",
+            "Light from the sun takes approximately 8 minutes and 20 seconds to reach Earth. 🌞",
+            "If you could fold a piece of paper 42 times, it would reach the moon. 🌕",
+            "The largest known structure in the universe is the Hercules-Corona Borealis Great Wall, which is about 10 billion light-years across. 🌌",
+            "The temperature in the void of space is about -270.45 degrees Celsius. ❄️",
+            "The age of the universe is estimated to be about 13.8 billion years. ⏳"
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('factDisplay').innerText = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
