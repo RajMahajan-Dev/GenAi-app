@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌌 Universe Facts Generator 🌠</title>
     <style>
-        /* Embedded CSS */
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fullscreen body */
         body {
             font-family: 'Arial', sans-serif;
             overflow: hidden;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
             height: 100vh;
-            background-image: url('https://example.com/stars-background.jpg'); /* Replace with your stars background image */
+            background: url('https://example.com/stars-background.jpg') no-repeat center center fixed; /* Replace with your stars background image */
             background-size: cover;
-            background-position: center;
-            transition: background-position 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        /* Responsive container */
         .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
+            width: 90%;
+            max-width: 600px;
             padding: 20px;
-            border: 1px solid #333;
             border-radius: 8px;
-            background-color: rgba(30, 30, 30, 0.8);
+            background-color: rgba(30, 30, 30, 0.9); /* Semi-transparent background */
+            color: #fff;
             text-align: center;
         }
 
+        /* Styling the button */
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -47,6 +51,16 @@
         button:hover {
             background-color: #3700B3;
         }
+
+        /* Responsive typography */
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -56,28 +70,12 @@
         <button onclick="generateFact()">Generate Fact 🚀</button>
     </div>
     <script>
-        // Embedded JavaScript
         const facts = [
             "The universe has no center and is constantly expanding. 🌌",
-            "Venus rotates in the opposite direction to most planets in our solar system. 🪐",
-            "A day on Venus is longer than a year on Venus. 🕰️",
-            "Mars has the tallest volcano in the solar system, named Olympus Mons. 🌋",
-            "Jupiter's Great Red Spot is a storm larger than Earth. 🌀",
-            "Saturn's rings are made up of billions of pieces of ice, dust, and rocks. 💍",
-            "Uranus rotates on its side, making it unique among the planets. 🧊",
-            "Neptune has the strongest winds in the solar system, reaching speeds of 1,600 km/h. 🌬️",
-            "The Milky Way galaxy is on a collision course with the Andromeda galaxy. 🌠",
-            "The sun accounts for 99.86% of the mass in our solar system. ☀️",
-            "There are more trees on Earth than stars in the Milky Way. 🌳",
-            "A neutron star is so dense that one teaspoon of its material would weigh about 6 billion tons. ⚖️",
-            "The universe might be one of many, potentially infinite, universes in a multiverse. 🔮",
-            "The first exoplanet was discovered in 1992. 🪐",
-            "The largest known asteroid is Ceres, which is also classified as a dwarf planet. 🪨",
-            "Light from the sun takes approximately 8 minutes and 20 seconds to reach Earth. 🌞",
-            "If you could fold a piece of paper 42 times, it would reach the moon. 🌕",
-            "The largest known structure in the universe is the Hercules-Corona Borealis Great Wall, which is about 10 billion light-years across. 🌌",
-            "The temperature in the void of space is about -270.45 degrees Celsius. ❄️",
-            "The age of the universe is estimated to be about 13.8 billion years. ⏳"
+            "A day on Venus is longer than a year on Venus. 🪐",
+            "There are more trees on Earth than stars in the Milky Way. 🌳🌌",
+            "Neutron stars can spin at a rate of 600 rotations per second. ⭐",
+            // Add more facts as needed
         ];
 
         function generateFact() {
