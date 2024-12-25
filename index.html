@@ -12,8 +12,15 @@
             color: #E0E0E0; /* Light text */
             text-align: center;
             padding: 20px;
-            background-image: url('https://example.com/space-background.jpg'); /* Example background image */
-            background-size: cover;
+            background: linear-gradient(270deg, #000000, #434343);
+            background-size: 400% 400%;
+            animation: AnimationName 30s ease infinite;
+        }
+
+        @keyframes AnimationName { 
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
         }
 
         .container {
@@ -23,6 +30,11 @@
             border: 1px solid #333;
             border-radius: 8px;
             background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent dark background for the container */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
         }
 
         button {
@@ -34,6 +46,7 @@
             border: none;
             border-radius: 5px;
             outline: none;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
